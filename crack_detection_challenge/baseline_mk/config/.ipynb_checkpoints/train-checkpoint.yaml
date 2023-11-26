@@ -1,0 +1,54 @@
+# System
+gpu_num: 1
+seed: 42
+debug: False
+verbose: False
+
+# Train / val
+val_size: 0.2
+
+# Data Loader
+input_size: 448
+scaler: normalize
+num_workers: 5
+shuffle: True
+drop_last: False
+
+# Model
+architecture: Unet
+encoder: timm-efficientnet-b4 #timm-regnety_016
+encoder_weight: noisy-student #imagenet
+depth: 5
+n_classes: 2
+activation: null
+
+#save & lood
+train_serial: #이어서 train하고 싶은 경우 serial 입력, 없으면 비우기
+
+# Trainer
+n_epochs: 30
+batch_size: 16
+loss: 
+  name: GDLoss # MeanCCELoss
+  args:
+    weight: [1, 1]
+metrics: 
+  - iou
+earlystopping_target: val_loss
+earlystopping_patience: 15
+optimizer:
+  name: AdamW
+  args:
+    lr: 5.0e-04
+    weight_decay: 5.0e-02
+scheduler:
+  name: CosineAnnealingLR
+  args:
+    T_max: 100
+    eta_min: 0
+
+# Logging
+plot:
+  - loss
+  - iou
+  - lr

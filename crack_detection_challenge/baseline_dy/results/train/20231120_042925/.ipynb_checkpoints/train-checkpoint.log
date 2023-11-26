@@ -1,0 +1,16 @@
+2023-11-20 04:29:25,425 | train | INFO | Load dataset, train: 4788, val: 1198
+2023-11-20 04:29:26,044 | train | INFO | Load model architecture: Unet
+2023-11-20 04:29:26,046 | train | INFO | Load optimizer:AdamW, scheduler: ReduceLROnPlateau, loss: MeanCCELoss, metric: ['iou']
+2023-11-20 04:29:26,046 | train | INFO | Load trainer
+2023-11-20 04:29:26,046 | train | INFO | ES | Initiated, mode: min, best score: inf, patience: 5
+2023-11-20 04:29:26,053 | train | INFO | Load early stopper, recorder
+2023-11-20 04:29:26,060 | train | INFO | START TRAINING
+2023-11-20 04:29:26,060 | train | INFO | Epoch 0/50 Train..
+2023-11-20 04:31:13,223 | train | INFO | Epoch 0/50 Validation..
+2023-11-20 04:31:26,182 | train | INFO | ES | 0/5, best:0.4876850446065267, now:0.4876850446065267
+2023-11-20 04:31:26,182 | train | INFO | ES | Set patience counter as 0
+2023-11-20 04:31:26,601 | train | INFO | Epoch 1/50 Train..
+2023-11-20 04:33:12,967 | train | INFO | Epoch 1/50 Validation..
+2023-11-20 04:33:25,060 | train | INFO | ES | 0/5, best:0.43449181040128065, now:0.43449181040128065
+2023-11-20 04:33:25,061 | train | INFO | ES | Set patience counter as 0
+2023-11-20 04:33:25,698 | train | INFO | Epoch 2/50 Train..

@@ -1,0 +1,12 @@
+{
+    "device": 1,
+    "num_workers": 10,
+    "val_size": 0.2,
+    "pretrained_name": "/scratch/network/mk8574/audio_sentiment_challenge/baseline_dy/results/whisper_mid",
+    "seed": 42,
+    "max_epoch": 50,
+    "lr": 0.0005,
+    "batch_size": 2,
+    "total_batch_size": 4,
+    "amp": true
+}

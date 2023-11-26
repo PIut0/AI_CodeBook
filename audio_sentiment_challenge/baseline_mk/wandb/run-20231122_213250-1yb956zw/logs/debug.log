@@ -1,0 +1,33 @@
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Current SDK version is 0.16.0
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Configure stats pid to 1080648
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Loading settings from /home/mk8574/.config/wandb/settings
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Loading settings from /scratch/network/mk8574/audio_sentiment_challenge/baseline_mk/wandb/settings
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:_log_setup():524] Logging user logs to /scratch/network/mk8574/audio_sentiment_challenge/baseline_mk/wandb/run-20231122_213250-1yb956zw/logs/debug.log
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:_log_setup():525] Logging internal logs to /scratch/network/mk8574/audio_sentiment_challenge/baseline_mk/wandb/run-20231122_213250-1yb956zw/logs/debug-internal.log
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:_jupyter_setup():470] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fe727d67e20>
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:init():564] calling init triggers
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:init():614] starting backend
+2023-11-22 21:32:50,962 INFO    MainThread:1080648 [wandb_init.py:init():618] setting up manager
+2023-11-22 21:32:50,963 INFO    MainThread:1080648 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-11-22 21:32:50,965 INFO    MainThread:1080648 [wandb_init.py:init():624] backend started and connected
+2023-11-22 21:32:50,966 INFO    MainThread:1080648 [wandb_run.py:_label_probe_notebook():1294] probe notebook
+2023-11-22 21:32:50,967 INFO    MainThread:1080648 [wandb_run.py:_label_probe_notebook():1304] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-11-22 21:32:50,967 INFO    MainThread:1080648 [wandb_init.py:init():716] updated telemetry
+2023-11-22 21:32:50,969 INFO    MainThread:1080648 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2023-11-22 21:34:20,979 ERROR   MainThread:1080648 [wandb_init.py:init():775] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-11-22 21:34:20,996 ERROR   MainThread:1080648 [wandb_init.py:init():1184] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1166, in init
+    run = wi.init()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 781, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-11-22 22:22:05,378 WARNING MsgRouterThr:1080648 [router.py:message_loop():77] message_loop has been closed

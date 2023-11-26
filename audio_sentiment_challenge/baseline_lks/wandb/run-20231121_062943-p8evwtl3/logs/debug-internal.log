@@ -1,0 +1,232 @@
+2023-11-21 06:29:43,769 INFO    StreamThr :809917 [internal.py:wandb_internal():86] W&B internal server running at pid: 809917, started at: 2023-11-21 06:29:43.768916
+2023-11-21 06:29:43,771 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: status
+2023-11-21 06:29:43,778 INFO    WriterThread:809917 [datastore.py:open_for_write():85] open: /scratch/network/mk8574/audio_sentiment_challenge/baseline_lks/wandb/run-20231121_062943-p8evwtl3/run-p8evwtl3.wandb
+2023-11-21 06:29:43,779 DEBUG   SenderThread:809917 [sender.py:send():380] send: header
+2023-11-21 06:29:43,782 DEBUG   SenderThread:809917 [sender.py:send():380] send: run
+2023-11-21 06:29:47,041 INFO    SenderThread:809917 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f034cb8ada0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f034cb8ada0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f034cb8ada0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-21 06:29:48,783 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:29:53,783 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:29:58,784 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:03,784 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:08,785 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:13,785 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:18,786 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:23,786 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:28,787 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:33,788 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:38,788 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:43,789 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:48,789 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:30:52,623 INFO    StreamThr :809917 [internal.py:wandb_internal():86] W&B internal server running at pid: 809917, started at: 2023-11-21 06:30:52.622805
+2023-11-21 06:30:52,625 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: status
+2023-11-21 06:30:52,626 INFO    WriterThread:809917 [datastore.py:open_for_write():85] open: /scratch/network/mk8574/audio_sentiment_challenge/baseline_lks/wandb/run-20231121_063052-2omne668/run-2omne668.wandb
+2023-11-21 06:30:52,626 DEBUG   SenderThread:809917 [sender.py:send():380] send: header
+2023-11-21 06:30:52,626 DEBUG   SenderThread:809917 [sender.py:send():380] send: run
+2023-11-21 06:30:56,096 INFO    SenderThread:809917 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f034c071db0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f034c071db0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f034c071db0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-21 06:30:57,624 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:02,625 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:07,625 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:12,626 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:17,626 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:22,627 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:27,627 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:32,628 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:37,628 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:46,974 INFO    StreamThr :809917 [internal.py:wandb_internal():86] W&B internal server running at pid: 809917, started at: 2023-11-21 06:31:46.973819
+2023-11-21 06:31:46,975 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: status
+2023-11-21 06:31:46,977 INFO    WriterThread:809917 [datastore.py:open_for_write():85] open: /scratch/network/mk8574/audio_sentiment_challenge/baseline_lks/wandb/run-20231121_063146-ch98zn6g/run-ch98zn6g.wandb
+2023-11-21 06:31:46,978 DEBUG   SenderThread:809917 [sender.py:send():380] send: header
+2023-11-21 06:31:46,978 DEBUG   SenderThread:809917 [sender.py:send():380] send: run
+2023-11-21 06:31:50,309 INFO    SenderThread:809917 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/util/connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f034c098c40>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f034c098c40>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 366, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/mk8574/.conda/envs/mk8574_3.10/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f034c098c40>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-11-21 06:31:51,975 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:31:56,976 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:01,976 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:06,977 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:11,977 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:16,978 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:21,978 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:26,979 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:31,980 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:32:36,980 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: keepalive
+2023-11-21 06:46:08,539 DEBUG   HandlerThread:809917 [handler.py:handle_request():146] handle_request: shutdown
+2023-11-21 06:46:08,540 INFO    HandlerThread:809917 [handler.py:finish():866] shutting down handler
+2023-11-21 06:46:08,865 INFO    WriterThread:809917 [datastore.py:close():294] close: /scratch/network/mk8574/audio_sentiment_challenge/baseline_lks/wandb/run-20231121_062943-p8evwtl3/run-p8evwtl3.wandb
+2023-11-21 06:46:16,252 WARNING StreamThr :809917 [internal.py:is_dead():414] Internal process exiting, parent pid 809757 disappeared
+2023-11-21 06:46:16,252 ERROR   StreamThr :809917 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-11-21 06:46:17,049 INFO    WriterThread:809917 [datastore.py:close():294] close: /scratch/network/mk8574/audio_sentiment_challenge/baseline_lks/wandb/run-20231121_063146-ch98zn6g/run-ch98zn6g.wandb
+2023-11-21 06:46:17,049 INFO    HandlerThread:809917 [handler.py:finish():866] shutting down handler
+2023-11-21 06:46:18,215 WARNING StreamThr :809917 [internal.py:is_dead():414] Internal process exiting, parent pid 809757 disappeared
+2023-11-21 06:46:18,215 ERROR   StreamThr :809917 [internal.py:wandb_internal():152] Internal process shutdown.
+2023-11-21 06:46:18,705 INFO    WriterThread:809917 [datastore.py:close():294] close: /scratch/network/mk8574/audio_sentiment_challenge/baseline_lks/wandb/run-20231121_063052-2omne668/run-2omne668.wandb
+2023-11-21 06:46:18,705 INFO    HandlerThread:809917 [handler.py:finish():866] shutting down handler

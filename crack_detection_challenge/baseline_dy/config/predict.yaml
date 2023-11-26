@@ -1,0 +1,13 @@
+# System
+gpu_num: 1
+
+# Model
+train_serial: '20231120_044313' # ex) '20221012_174254'
+pred_epoch: 5 # pred 하고 싶은 pt 파일의 epoch
+
+# Data
+batch_size: 16
+num_workers: 4
+
+# Logging
+verbose: false

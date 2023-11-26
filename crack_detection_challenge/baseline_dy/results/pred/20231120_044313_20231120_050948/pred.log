@@ -1,0 +1,4 @@
+2023-11-20 05:09:48,401 | train | INFO | Load test dataset: 3992
+2023-11-20 05:09:49,138 | train | INFO | Load model architecture: Unet
+2023-11-20 05:09:51,224 | train | INFO | Load model weight, /scratch/network/mk8574/crack_detection_challenge/baseline_dy/results/train/20231120_044313/model/epoch5.pt
+2023-11-20 05:09:51,227 | train | INFO | START PREDICTION

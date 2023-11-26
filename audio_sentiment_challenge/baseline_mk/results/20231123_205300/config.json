@@ -1,0 +1,13 @@
+{
+    "device": 1,
+    "num_workers": 10,
+    "logging": true,
+    "val_size": 0.2,
+    "pretrained_name": "shhossain/whisper-tiny-bn-emo",
+    "seed": 42,
+    "max_epoch": 50,
+    "lr": 0.0005,
+    "batch_size": 8,
+    "total_batch_size": 32,
+    "amp": true
+}

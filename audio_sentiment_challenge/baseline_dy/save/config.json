@@ -1,0 +1,13 @@
+{
+    "train_csv": "/scratch/network/mk8574/audio_sentiment_challenge/data/train.csv",
+    "test_csv": "/scratch/network/mk8574/audio_sentiment_challenge/data/test.csv",
+    "k_fold_num": 0,
+    "k_fold_idx": 1,
+    "save_dir": "/scratch/network/mk8574/audio_sentiment_challenge/baseline_dy/save",
+    "pretrained_name": "ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition",
+    "seed": 42,
+    "max_epoch": 50,
+    "lr": 0.0005,
+    "batch_size": 16,
+    "gradient_accumulate_step": 2
+}

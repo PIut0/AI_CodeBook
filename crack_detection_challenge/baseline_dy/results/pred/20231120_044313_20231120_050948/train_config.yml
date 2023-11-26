@@ -1,0 +1,44 @@
+gpu_num: 1
+seed: 42
+debug: false
+verbose: false
+val_size: 0.2
+input_size: 448
+scaler: normalize
+num_workers: 4
+shuffle: true
+drop_last: false
+architecture: Unet
+encoder: timm-efficientnet-b4
+encoder_weight: noisy-student
+depth: 5
+n_classes: 2
+activation: null
+train_serial: null
+n_epochs: 50
+batch_size: 16
+loss:
+  name: MeanCCELoss
+  args:
+    weight:
+    - 1
+    - 1
+metrics:
+- iou
+earlystopping_target: val_iou
+earlystopping_patience: 5
+optimizer:
+  name: AdamW
+  args:
+    lr: 0.0005
+    weight_decay: 0.05
+scheduler:
+  name: ReduceLROnPlateau
+  args:
+    factor: 0.2
+    mode: min
+    patience: 3
+    cooldown: 1
+plot:
+- loss
+- iou

@@ -1,0 +1,6 @@
+gpu_num: 1
+train_serial: '20231120_044313'
+pred_epoch: 5
+batch_size: 16
+num_workers: 4
+verbose: false
